@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-public class Day1 {
+public class Day1Part1 {
     public static void main(String[] args) throws Exception{
         String calories = """
             1000
