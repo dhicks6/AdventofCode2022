@@ -13,7 +13,7 @@ public class Day1 {
             7000
             8000
             9000
-            
+
             10000
                 """;
     
@@ -30,7 +30,7 @@ public class Day1 {
                 calorie = 0;
                 continue;
             }
-            calorie = Integer.parseInt(strCal);
+            calorie += Integer.parseInt(strCal);
     }
     if (mostCalories < calorie) {
         mostCalories = calorie;
