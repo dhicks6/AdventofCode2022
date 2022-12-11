@@ -47,12 +47,13 @@ public class Day3Part1 {
         while ((line = br.readLine()) != null) {
             String str = line.trim();
             int itemsPerCompartment = str.length()/2;
+            System.out.println(itemsPerCompartment);
             //Need to split str into 2 even strings based on the length of itemsperCompartment
             //Using the java String split() method to split the string into a string array of size 2
             String[] compartments = {str.substring(0, itemsPerCompartment), str.substring(itemsPerCompartment)};
-                
+            compartmentOne = compartments[0];
+            CompartmentTwo = compartments[1];
+            System.out.println("Compartment one " + compartmentOne + ", Compartment two " + CompartmentTwo);
         }
-    
     }
-
 }
