@@ -80,7 +80,13 @@ public class Day3Part1 {
                     if (compartmentOneArray[i] == compartmentTwoArray[j]) {
                         matchingItem = compartmentOneArray[i];
                         count++;
-                        System.out.println(count + "  " + matchingItem);
+                        //System.out.println(count + "  " + matchingItem);
+                        for (int k = 0; k < priorityCharArray.length; k++) {
+                            if (matchingItem == priorityCharArray[k]) {
+                                prioritySum += k+1;
+                                System.out.println(prioritySum);
+                            }
+                        }
                         break;
                     }
                 }
