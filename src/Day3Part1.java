@@ -48,13 +48,13 @@ public class Day3Part1 {
         while ((line = br.readLine()) != null) {
             String str = line.trim();
             int itemsPerCompartment = str.length()/2;
-            //System.out.println(itemsPerCompartment);
+            System.out.println(itemsPerCompartment);
             char matchingItem;
             //Need to split str into 2 even strings based on the length of itemsperCompartment
             String[] compartments = {str.substring(0, itemsPerCompartment), str.substring(itemsPerCompartment)};
             compartmentOne = compartments[0];
             CompartmentTwo = compartments[1];
-            //System.out.println("Compartment one " + compartmentOne + ", Compartment two " + CompartmentTwo);
+            System.out.println("Compartment one " + compartmentOne + ", Compartment two " + CompartmentTwo);
 
             /*
              * Now I need to compare the two compartment strings and find the similar letter
@@ -62,17 +62,22 @@ public class Day3Part1 {
              *      I can break each string into a char array and then do comparisons.
             */
 
+            /*
+             * Currently I am getting more letters than there are lines in the input file.
+             * There are 300 lines in the input file and my counter prints out 414 matching chars
+             */
+
             char[] compartmentOneArray = compartmentOne.toCharArray();
             char[] compartmentTwoArray = CompartmentTwo.toCharArray();
 
             for (int i = 0; i < compartmentOneArray.length; i++) {
-                
+                System.out.println("Compartment one = " + compartmentOneArray[i]);
                 for (int j = 0; j < compartmentTwoArray.length; j++) {
+                    System.out.println("Compartnemt two = " + compartmentTwoArray[j]);
                     if (compartmentOneArray[i] == compartmentTwoArray[j]) {
                         matchingItem = compartmentOneArray[i];
                         count++;
-                        System.out.println(count + "  " + compartmentOneArray[i]);
-                        break;
+                        System.out.println(count + "  " + matchingItem);
                     }
                 }
 
