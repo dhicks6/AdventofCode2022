@@ -1,6 +1,10 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.Reader;
+
 public class Day3Part1 {
-    public static void main(String[] args) {
-        /*
+
+            /*
          * Each rucksack has 2 large compartments.
          * All items of a given type are meant to go into exactly one of the two compartments.
          * The elf that did the packing failed to follow this rule for exactly one item per rucksack.
@@ -19,5 +23,11 @@ public class Day3Part1 {
          * Find the item type that appears in both compartments of each rucksack. 
          * What is the sum of the priorities of those item types?
          */
+
+    public static void main(String[] args) throws Exception{
+        BufferedReader br = new BufferedReader(new FileReader("inputs/inputDay3.txt"));
+        
+    
     }
+
 }
