@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-public class Day2Part1 {
+public class Day2Part2 {
     public static void main(String[] args) throws Exception {
         /*
          Scores are +1 point for rock, +2 for paper, +3 for scissors, +0 for a loss, +3 for a draw, and +6 for a win
@@ -19,43 +19,52 @@ public class Day2Part1 {
             String str = line.trim();
             char[] ch = str.toCharArray();
             char elfChoice = ch[0];
-            char myChoice = ch[2];
+            char secondCOl = ch[2];
   
             /*
              * Each choice that I make has a points total attached to it so needs its own if statement.
              * Each choice will win lose or draw so there needs to be logic in each choice for if I have won
              *      lost or drew.
+             * With the new information I need to lose if the second column is an X, draw if the second column is a Y,
+             *      and win if the second column is a Z
              */
-            if (myChoice == 'X') {
-                System.out.println("My choice is Rock.");
-                totalScore += rock;
-                if (elfChoice == 'C') {
-                    totalScore += win;
-                }
-                else if (elfChoice == 'A') {
-                    totalScore += draw;
-                }
-            }
-
-            if (myChoice == 'Y') {
-                System.out.println("My choice is Paper.");
-                totalScore += paper;
+            if (secondCOl == 'X') {
                 if (elfChoice == 'A') {
-                    totalScore += win;
+                    totalScore += scissor;
                 }
                 else if (elfChoice == 'B') {
-                    totalScore += draw;
+                    totalScore += rock;
+                }
+                else {
+                    totalScore += paper;
                 }
             }
 
-            if (myChoice == 'Z') {
-                System.out.println("My choice is Scissor.");
-                totalScore += scissor;
+            if (secondCOl == 'Y') {
+                    totalScore += draw;
+
+                if (elfChoice == 'A') {
+                    totalScore += rock;
+                }
+                else if (elfChoice == 'B') {
+                    totalScore += paper;
+                }
+                else {
+                    totalScore += scissor;
+                }
+            }
+
+            if (secondCOl == 'Z') {
+                totalScore += win;
+
                 if (elfChoice == 'B') {
-                    totalScore += win;
+                    totalScore += scissor;
                 }
                 else if (elfChoice == 'C') {
-                    totalScore += draw;
+                    totalScore += rock;
+                }
+                else {
+                    totalScore += paper;
                 }
             }
         }

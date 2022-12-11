@@ -13,7 +13,7 @@ import java.util.Collections;
 public class Day1Part2 {
     public static void main(String[] args) throws Exception{
 
-        BufferedReader br = new BufferedReader(new FileReader("inputs/day1.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("inputs/inputDay1.txt"));
         int calorie = 0;
         int mostCalories = 0;
         String line;

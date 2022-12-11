@@ -20,7 +20,7 @@ public class Day1Part1 {
             10000
                 """;
     
-        BufferedReader br = new BufferedReader(new FileReader("inputs/day1.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("inputs/inputDay1.txt"));
         
         int calorie = 0;
         int mostCalories = 0;
