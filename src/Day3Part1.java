@@ -25,8 +25,33 @@ public class Day3Part1 {
          */
 
     public static void main(String[] args) throws Exception{
+        String line = "";
         BufferedReader br = new BufferedReader(new FileReader("inputs/inputDay3.txt"));
-        
+        String compartmentOne = "";
+        String CompartmentTwo = "";
+        int prioritySum = 0;
+        char[] priorityCharArray = new char[]{'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q',
+            'r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P',
+            'Q','R','S','T','U','V','W','X','Y','Z'}; 
+        /*
+         * So I want to split each line into two seperate strings and compare those two strings to find 
+         *      the char that is in both compartments.
+         * Then I need to find the priority of the item and add it to a running total.
+         * To find the priority I can either hardcode each char as an int and use those values to sum up my total,
+         *      or I can make an array where each char is entered sequentially and once I have the item I am looking
+         *      for use the index+1 because arrays start at 0 to sum up the total.
+         * 
+         * I think the array idea will be less lines of code, but a bit more complex
+         */
+
+        while ((line = br.readLine()) != null) {
+            String str = line.trim();
+            int itemsPerCompartment = str.length()/2;
+            //Need to split str into 2 even strings based on the length of itemsperCompartment
+            //Using the java String split() method to split the string into a string array of size 2
+            String[] compartments = {str.substring(0, itemsPerCompartment), str.substring(itemsPerCompartment)};
+                
+        }
     
     }
 
