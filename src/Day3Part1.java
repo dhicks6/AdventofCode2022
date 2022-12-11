@@ -48,13 +48,13 @@ public class Day3Part1 {
         while ((line = br.readLine()) != null) {
             String str = line.trim();
             int itemsPerCompartment = str.length()/2;
-            System.out.println(itemsPerCompartment);
+            //System.out.println(itemsPerCompartment);
             char matchingItem = ' ';
             //Need to split str into 2 even strings based on the length of itemsperCompartment
             String[] compartments = {str.substring(0, itemsPerCompartment), str.substring(itemsPerCompartment)};
             compartmentOne = compartments[0];
             CompartmentTwo = compartments[1];
-            System.out.println("Compartment one " + compartmentOne + ", Compartment two " + CompartmentTwo);
+            //System.out.println("Compartment one " + compartmentOne + ", Compartment two " + CompartmentTwo);
 
             /*
              * Now I need to compare the two compartment strings and find the similar letter
@@ -74,9 +74,9 @@ public class Day3Part1 {
             char[] compartmentTwoArray = CompartmentTwo.toCharArray();
 
             for (int i = 0; i < compartmentOneArray.length; i++) {
-                System.out.println("Compartment one = " + compartmentOneArray[i]);
+                //System.out.println("Compartment one = " + compartmentOneArray[i]);
                 for (int j = 0; j < compartmentTwoArray.length; j++) {
-                    System.out.println("Compartnemt two = " + compartmentTwoArray[j]);
+                    //System.out.println("Compartnemt two = " + compartmentTwoArray[j]);
                     if (compartmentOneArray[i] == compartmentTwoArray[j]) {
                         matchingItem = compartmentOneArray[i];
                         count++;
