@@ -1,0 +1,6 @@
+Why is it that I can use throws Exception as a catch all instead of having to use a specific Exception  
+    like FileNotFoundException?
+    Like how the file reader needs FileNotFoundException, but the buffered reader needs IOException
+        Why does just Exception work for both?
+
+        
