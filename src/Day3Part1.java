@@ -33,6 +33,7 @@ public class Day3Part1 {
         char[] priorityCharArray = new char[]{'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q',
             'r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P',
             'Q','R','S','T','U','V','W','X','Y','Z'}; 
+            int count = 0;
         /*
          * So I want to split each line into two seperate strings and compare those two strings to find 
          *      the char that is in both compartments.
@@ -47,13 +48,38 @@ public class Day3Part1 {
         while ((line = br.readLine()) != null) {
             String str = line.trim();
             int itemsPerCompartment = str.length()/2;
-            System.out.println(itemsPerCompartment);
+            //System.out.println(itemsPerCompartment);
+            char matchingItem;
             //Need to split str into 2 even strings based on the length of itemsperCompartment
-            //Using the java String split() method to split the string into a string array of size 2
             String[] compartments = {str.substring(0, itemsPerCompartment), str.substring(itemsPerCompartment)};
             compartmentOne = compartments[0];
             CompartmentTwo = compartments[1];
-            System.out.println("Compartment one " + compartmentOne + ", Compartment two " + CompartmentTwo);
+            //System.out.println("Compartment one " + compartmentOne + ", Compartment two " + CompartmentTwo);
+
+            /*
+             * Now I need to compare the two compartment strings and find the similar letter
+             * With the compartments being in strings it makes finding the matching chars.
+             *      I can break each string into a char array and then do comparisons.
+            */
+
+            char[] compartmentOneArray = compartmentOne.toCharArray();
+            char[] compartmentTwoArray = CompartmentTwo.toCharArray();
+
+            for (int i = 0; i < compartmentOneArray.length; i++) {
+                
+                for (int j = 0; j < compartmentTwoArray.length; j++) {
+                    if (compartmentOneArray[i] == compartmentTwoArray[j]) {
+                        matchingItem = compartmentOneArray[i];
+                        count++;
+                        System.out.println(count + "  " + compartmentOneArray[i]);
+                        break;
+                    }
+                }
+
+
+            }
+
+
         }
     }
 }
