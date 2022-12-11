@@ -49,7 +49,7 @@ public class Day3Part1 {
             String str = line.trim();
             int itemsPerCompartment = str.length()/2;
             System.out.println(itemsPerCompartment);
-            char matchingItem;
+            char matchingItem = ' ';
             //Need to split str into 2 even strings based on the length of itemsperCompartment
             String[] compartments = {str.substring(0, itemsPerCompartment), str.substring(itemsPerCompartment)};
             compartmentOne = compartments[0];
@@ -65,6 +65,9 @@ public class Day3Part1 {
             /*
              * Currently I am getting more letters than there are lines in the input file.
              * There are 300 lines in the input file and my counter prints out 414 matching chars
+             * So after adding testing print lines and shortening the input file to one line I have noticed
+             *      that it prints out and adds one to count everytime it finds a match. 
+             * So I need to break out of both loops after I find a match
              */
 
             char[] compartmentOneArray = compartmentOne.toCharArray();
@@ -78,9 +81,12 @@ public class Day3Part1 {
                         matchingItem = compartmentOneArray[i];
                         count++;
                         System.out.println(count + "  " + matchingItem);
+                        break;
                     }
                 }
-
+                if (matchingItem != ' ') {
+                    break;
+                }
 
             }
 
